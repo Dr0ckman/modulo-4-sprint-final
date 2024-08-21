@@ -47,8 +47,53 @@ class DomManager {
         for (let card of cards) {
             card.addEventListener("click", () => {
                 const cardTitle = card.getElementsByClassName("card-title")[0].innerHTML;
-                const modal = new Modal(cardTitle, "lorem");
+                const modal = new Modal(cardTitle, `Lorem ipsum dolor sit amet 
+                    consectetur adipisicing elit. 
+                    Repudiandae illum quae corporis porro quibusdam 
+                    vero at voluptate ex rerum voluptatum numquam
+                    voluptas doloremque qui ut, dolore officiis dicta, 
+                    soluta dolorum.`);
                 modal.show();
+                // El gráfico se inserta luego de mostrar el modal.
+                // Hacerlo de cualquier otra forma no funciona, porque técnicamente
+                // el modal aún no existe en el DOM.
+                const ctx = document.getElementById("chartCanvas");
+
+                // Por hacer: sacar esta data de PokeAPI.
+                const data = {
+                    labels: [
+                        'Eating',
+                        'Drinking',
+                        'Sleeping',
+                        'Designing',
+                        'Coding',
+                        'Cycling',
+                        'Running'
+                    ],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [65, 59, 90, 81, 56, 55, 40],
+                        fill: true,
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        pointBackgroundColor: 'rgb(255, 99, 132)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(255, 99, 132)'
+                    }]
+                };
+
+                new Chart(ctx, {
+                    type: 'radar',
+                    data: data,
+                    options: {
+                        elements: {
+                            line: {
+                                borderWidth: 3
+                            }
+                        }
+                    },
+                });
             })
         }
     }
@@ -85,13 +130,30 @@ class DomManager {
             })
     }
 
+    searchPokemon() {
+        const searchButton = document.getElementById("searchButton");
+        searchButton.addEventListener("click", async () => {
+            let searchResult = [];
+            if (this.#currentSearchMode === "id") {
+                // Buscar por ID
+                searchResult = [];
+                await this.printPage(1, searchResult);
+            } else {
+                // Buscar de forma masiva
+                searchResult = [];
+                await this.printPage(1, searchResult);
+            }
+        })
+    }
+
     /**
      * Muestra las tarjetas en pantalla.
      * 
      * Por hacer: mover el ciclo for a otro lado.
      * Al final no mostramos la descripción del pokemon en la tarjeta. Es demasiado lento.
      * @param {number} page - Número de página a mostrar. 
-     * @param {json} pokemonList - Lista de Pokemon. Obtenida de PokeAPI.
+     * @param {json} pokemonList - Lista de Pokemon. Obtenida de PokeAPI inicialmente.
+     * Luego se obtiene del filtro.
      */
     async printPage(page, pokemonList) {
         const cardWrapper = document.getElementById("cardContainer");

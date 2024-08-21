@@ -29,6 +29,7 @@ class Modal {
                         </div>
                         <div class="modal-body">
                             <p>${this.#content}</p>
+                            <canvas id="chartCanvas"></canvas>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -32,17 +32,6 @@ body {
     color: #3d7dca !important; 
 }
 
-#alertPlaceholder {
-    height: 1rem;
-    margin-bottom: 6%;
-}
-
-.btn-main {
-    width: 20rem;
-    font-weight: 600;
-    font-family: "Roboto", sans-serif;
-}
-
 .btn-outline-warning {
     border: 1px solid #ffcb05;
 }
@@ -50,11 +39,6 @@ body {
 .btn-outline-warning:hover {
     border: 1px solid #3d7dca;
     color: #3d7dca;
-}
-
-.opacity-transition {
-    /* Al cambiar la opacidad de esta clase, demora 1 segundo, de manera gradual */
-    transition: opacity 1s;
 }
 
 .montserrat-regular {

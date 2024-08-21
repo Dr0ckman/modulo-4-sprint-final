@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#alertPlaceholder {
+    height: 1rem;
+    margin-bottom: 6%;
+}
+
+.btn-main {
+    width: 20rem;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+}
+
+.opacity-transition {
+    /* Al cambiar la opacidad de esta clase, demora 1 segundo, de manera gradual */
+    transition: opacity 1s;
+}
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}

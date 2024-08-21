@@ -16,13 +16,20 @@ body {
 
 .pokemon-font {
     font-family: "Pokemon Solid";
-    font-size: 2rem;
     color: #ffcb05;
     text-shadow: 3px 3px 0 #3d7dca;
 }
 
 .navbar-brand:hover {
     color: #ffcb05;
+}
+
+.text-primary {
+    color: #ffcb05;
+}
+
+.text-secondary {
+    color: #3d7dca !important; 
 }
 
 #alertPlaceholder {

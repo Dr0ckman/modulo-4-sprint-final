@@ -32,6 +32,11 @@ body {
     color: #3d7dca !important; 
 }
 
+.card-title {
+    color: #3d7dca;
+    font-weight: 900;
+}
+
 .btn-outline-warning {
     border: 1px solid #ffcb05;
 }

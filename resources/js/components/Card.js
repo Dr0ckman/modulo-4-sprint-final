@@ -25,8 +25,8 @@ class Card {
         <div class="col-sm-6 col-lg mb-3">
             <div class="card" style="width: 18rem;">
                 <img src="${this.#spriteUrl}" class="card-img-top">
-                <div class="card-body">
-                <h5 class="card-title text-center">${this.#pokemonName}</h5>
+                <div class="card-body bg-warning py-0">
+                    <h5 class="card-title text-center my-3">${this.#pokemonName}</h5>
                 </div>
             </div>
         </div>

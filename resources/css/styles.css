@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Pokemon Solid";
+    src: url("../fonts/Pokemon\ Solid.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +14,17 @@ body {
     padding-bottom: 5rem;
 }
 
+.pokemon-font {
+    font-family: "Pokemon Solid";
+    font-size: 2rem;
+    color: #ffcb05;
+    text-shadow: 3px 3px 0 #3d7dca;
+}
+
+.navbar-brand:hover {
+    color: #ffcb05;
+}
+
 #alertPlaceholder {
     height: 1rem;
     margin-bottom: 6%;
@@ -18,6 +34,15 @@ body {
     width: 20rem;
     font-weight: 600;
     font-family: "Roboto", sans-serif;
+}
+
+.btn-outline-warning {
+    border: 1px solid #ffcb05;
+}
+
+.btn-outline-warning:hover {
+    border: 1px solid #3d7dca;
+    color: #3d7dca;
 }
 
 .opacity-transition {

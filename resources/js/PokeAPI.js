@@ -1,17 +1,6 @@
 class PokeAPI {
     #pokemonList;
 
-    /**
-     * Representa la PokeAPI a grosso modo.
-     */
-    constructor() {
-        if (localStorage.getItem("pokemonList") === null) {
-            this.fetchPokemonList();
-        } else {
-            this.#pokemonList = JSON.parse(localStorage.getItem("pokemonList"));
-        }
-    }
-
     get pokemonList() {
         return this.#pokemonList;
     }
@@ -22,6 +11,11 @@ class PokeAPI {
      * @returns {json}
      */
     async fetchPokemonList() {
+        if (localStorage.getItem("pokemonList")) {
+            this.#pokemonList = JSON.parse(localStorage.getItem("pokemonList"));
+            return this.#pokemonList
+        }
+
         const url = "https://pokeapi.co/api/v2/pokemon/?limit=2000&offset=0";
         try {
             const response = await fetch(url);
@@ -31,6 +25,7 @@ class PokeAPI {
 
             this.#pokemonList = await response.json();
             this.#cacheData();
+
             return this.#pokemonList;
         } catch (error) {
             console.error(error.message);
@@ -42,7 +37,6 @@ class PokeAPI {
      * @param {string} url - Se obtiene de this.fetchPokemonList()
      * @returns {json}
      */
-    
     async fetchPokemon(url) {
         try {
             const response = await fetch(url);

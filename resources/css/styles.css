@@ -13,11 +13,14 @@ body {
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
+.card{
+    cursor: pointer;
+}
 
 .pokemon-font {
     font-family: "Pokemon Solid";
     color: #ffcb05;
-    text-shadow: 3px 3px 0 #3d7dca;
+    text-shadow: 5px 5px 0 #3d7dca;
 }
 
 .navbar-brand:hover {

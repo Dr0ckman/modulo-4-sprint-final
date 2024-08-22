@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="resources/css/styles.css">
 </head>
 
-<body class="montserrat-regular">
+<body id="body" class="montserrat-regular">
 
     <nav class="navbar fixed-top bg-body-tertiary">
         <div class="container-fluid">
             <p class="navbar-brand m-0 pokemon-font fs-3">Modulo 4 - Sprint Final</p>
             <div class="navbar-nav">
-                <p class="nav-item mb-0 text-secondary fw-bold">20/08/2024</p>
+                <p class="nav-item mb-0 text-secondary fw-bold">21/08/2024</p>
             </div>
         </div>
     </nav>
@@ -33,16 +33,13 @@
             <li class="nav-item">
                 <button class="nav-link active" value="id">Búsqueda por ID</button>
             </li>
-            <li class="nav-item">
-                <button class="nav-link" value="massive">Búsqueda masiva</button>
-            </li>
         </ul>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" style="max-width: 30rem;">
-            <button class="btn btn-outline-warning" type="button" id="searchButton"><strong>Buscar</strong></button>
-        </div>
+        <form id="searchForm" class="input-group mb-3">
+            <input type="search" class="form-control" style="max-width: 30rem;" id="searchInput">
+            <button class="btn btn-outline-warning" type="submit" id="searchButton"><strong>Buscar</strong></button>
+        </form>
         <!-- Tarjetas -->
-        <div id="cardContainer" class="row gx-3 justify-content-evenly">
+        <div id="cardContainer" class="row gx-3 justify-content-center">
             <!-- Tarjetas insertadas por JS -->
         </div>
         <!-- Paginación -->
